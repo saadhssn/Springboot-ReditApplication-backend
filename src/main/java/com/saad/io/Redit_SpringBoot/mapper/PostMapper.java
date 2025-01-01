@@ -25,7 +25,9 @@ public abstract class PostMapper { // Ensure the class is abstract
     @Autowired
     private AuthService authService;
 
+
     // Mapping from PostRequest to Post
+    //Mapper issue while running the project won't be able to start the project also should have to try different approach instead
     @Mapping(target = "createdDate", expression = "java(java.time.Instant.now())")
     @Mapping(target = "description", source = "postRequest.description")
     @Mapping(target = "subreddit", source = "subreddit")
